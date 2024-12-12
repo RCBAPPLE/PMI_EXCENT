@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Questionnaire d'aide au diagnostic - Template</title>
+        <link href="q_style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <a href="" class="lien-logig">Mise en sécurité</a>
+                <div class="triangle"></div>
+                <a href="" class="lien-logig">Observation et examen</a>
+                <div class="triangle"></div>
+                <a href="" class="lien-logig">Diagnostic</a>
+                <div class="triangle"></div>
+                <a href="" class="lien-logig">Résolution</a>
+                <a href="https://www.excent.fr/" class="lien-site">
+                    <img src="images/logo_eXcent.jpg" alt="Logo eXcent" class="logo-accueil">
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <script src="q_java.js"></script>
+
+            <div class="overlay" id="overlay"></div>
+            <div class="popup-logig" id="popup-logig">
+                <img src="images/logigrammes/testlog.png" alt="Logigramme actif">
+                <button onclick="closePopup_logig()">Fermer</button>
+            </div>
+            <div class="popup-comm" id="popup-comm">
+                <p>Mettre ici le form de commentaires</p>
+                <button onclick="closePopup_comm()">Fermer</button>
+            </div>
+            <div class="popup-img" id="popup-img">
+                <img src="images/jx.jpg" alt="Illustration de la question">
+                <button onclick="closePopup_img()">Fermer</button>
+            </div>
+            <div class="popup-info" id="popup-info">
+                <p>Voici les informations complémentaires pour cette question</p>
+                <button onclick="closePopup_info()">Fermer</button>
+            </div>
+
+            <div class="main-grid">
+                <div class="acces-logig">
+                    <a onclick="openPopup_logig()">Accès logigramme</a>
+                </div>
+                <div class="comm"><a onclick="openPopup_comm()">Commentaires :</a></div>
+                <div class="image-question">
+                    <a onclick="openPopup_img()">
+                        <img src="images/jx.jpg" alt="Image associée à la question" class="img-q">
+                    </a>
+                </div>
+
+                <div class="question-grid">
+                    <div class="logi-actif">Mise en sécurité</div>
+                    <div class="pictogramme">
+                        Attention danger !
+                        <img src="images/picto_danger.png" alt="Pictogramme de danger" title="Danger" class="img-pict">
+                        <img src="images/picto_explosion.png" alt="Pictogramme explosif" title="Danger d'explosion" class="img-pict">
+                    </div>
+                    <div class="question">Question</div>
+                    <div class="oui">
+                        <a href="">OUI</a>
+                    </div>
+                    <div class="non">
+                        <a href="">NON</a>
+                    </div>
+                    <div class="fleche-retour">
+                        <a href="">
+                            <span class="material-icons">keyboard_return</span>
+                            Retour arrière
+                        </a>
+                    </div>
+                    <div class="info">
+                        <a onclick="openPopup_info()">
+                            <span class="material-icons">info</span>
+                            Informations
+                        </a>
+                    </div>
+
+                
+                </div>
+                
+            </div>
+        </main>
+
+        <footer>
+        </footer>
+    </body>
+
+</html>
