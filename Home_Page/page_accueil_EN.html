@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+    <head> 
+        <meta charset="utf-8"> 
+        <title>Home page</title> <!-- Titre de la page web -->
+        <link rel="stylesheet" href="style_page_accueil.css"/> 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+<!-- entête de page -->
+        <header> 
+            <div class="banner">
+                <h1>JacXson U70 Diagnostic tool's Home page</h1> <!-- Titre dans l'entête -->
+
+                    <a href="page_accueil_FR.html">
+                    <img src="Image/drapeau_français.png" alt="Version française" title="Version française" class="desactive"/> </a>
+                    <a href="page_accueil_EN.html">
+                    <img src="Image/drapeau_anglais.png" alt="English version" title="English version" class="active"/> </a>
+            </div>
+
+        </header>
+<!-- Fin de l'entête de page -->
+
+<!-- Contenue principal (partie centrale de la page) -->
+        <main> 
+
+            <br>
+
+            <form action="" method="post"> 
+                <fieldset>
+                    <!-- Case pour renseigner le Client -->
+                    <div class="input_one">
+                        <label for="Client">Customer :</label> <!-- Le texte blanc représente le texte 
+                        présent au début de la case -->
+                        <input type="text" name="Client" id="Client" 
+                        placeholder="ex : Airbus Blagnac" required><br> <!-- Le texte après 
+                        "placeholder" est ce qui sera écris dans le fond de la case à remplir  -->
+                    </div>
+                    <!-- Fin de la case pour renseigner le Client -->
+
+                    <!-- Case pour renseigner le SN du JacXson -->
+                    <div class="input_two">
+                        <label for="SN">JacXson SN :</label> <!-- Le texte blanc représente le texte 
+                        présent au début de la case -->
+                        <input type="text" name="SN" id="SN" 
+                        placeholder="ex : SN01" required><br> <!-- Le texte après 
+                        "placeholder" est ce qui sera écris dans le fond de la case à remplir  -->
+                    </div>
+                    <!-- Fin de la case pour renseigner le SN du JacXson -->
+
+                    <!-- Case pour renseigner le trigramme du technicien -->
+                    <div class="input_three">
+                        <label for="Trigramme">Technician's trigramme :</label> <!-- Le texte blanc 
+                        représente le texte présent au début de la case -->
+                        <input type="text" name="Trigramme" id="Trigramme" 
+                        placeholder="ex : 123" required><br> <!-- Le texte après 
+                        "placeholder" est ce qui sera écris dans le fond de la case à remplir  -->
+                    </div>
+                    <!-- Fin de la case pour renseigner trigramme du technicien -->
+                </fieldset>
+            
+                <!-- Case pour démarrer le test -->
+                <input type="submit" value="Start the diagnostic" /> <!-- Le text après "value" est 
+                le text présent dans le bouton pour démarrer le test -->
+                <!-- Fin de la case pour démarrer le test -->
+            </form>
+
+        </main>
+<!-- Fin du contenue principal (partie centrale de la page) -->
+
+<!-- Pied de page (Point d'information en bas à droite de la page) -->
+        <footer>
+            <span class="material-icons tooltip">help
+                <span class="tooltip-text">
+                <!-- Tout le text ci-dessous est le text qui s'affiche lorsque l'on passe la souris
+                 sur le point d'interrogation en bas de bage -->
+                Cette page est la page d'accueil de l'outil d'aide au diagnostic pour le JacXson U70. Il est utile lorsque vous devez effectuer un diagnostic depuis votre domicile ou votre lieu de travail avec un client au téléphone.
+                Vous devez ici renseigner les trois champs qui sont : le nom du client au bout du fil, le SN du JacXson concerné par ce diagnostic ainsi que votre matricule (ces informations permettront de préremplir le RIN à la fin du diagnostic).
+                Une fois ces trois champs renseignés, veuillez cliquer sur "Démarrer le diagnostic". Suite à cela, vous devrez répondre à une suite de questions qui vous permettrons de poser un premier diagnostic.<br>
+                <br>
+                Si vous avez besoin de plus d'informations sur la façon dont utiliser l'outil d'aide au diagnostic n'hesitez pas à consulter la notice d'utilisation de celui-ci.
+                <!-- Fin du text -->
+                </span>
+            </span>
+        </footer>
+<!-- Fin du pied de page (Point d'information en bas à droite de la page) -->
+        
+    </body>
+
+</html>
