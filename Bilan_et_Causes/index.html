@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Bilan</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  
+<nav>
+    <a href="" class="lien-logig">Mise en sécurité</a>
+    <a href="" class="lien-logig">Observation et examen</a>
+    <a href="" class="lien-logig">Diagnostic</a>
+    <a href="" class="lien-logig">Résolution</a>
+    <a href="https://www.excent.fr/" class="lien-site">
+        <img src="images/logo_eXcent.jpg" alt="Logo eXcent" class="logo-accueil">
+    </a>
+</nav>
+  
+ <!-- Contenu de la section Causes Racines -->
+    <div id="causes" class="content">
+        <div class="title-buttons">
+            <button id="causes_racines_button_disabled", class="tab" >Causes Racines</button>
+            <button id="bilan_button_active", class="tab" >Bilan</button>
+        </div>
+        <div class="rectangle">
+            <div class="box">Problèmes causés par :</div>
+            <div class="box">Résolution :</div>
+        </div>
+    </div>
+
+    <!-- Contenu de la section Bilan -->
+    <div id="bilan" class="content">
+        <div class="title-buttons">
+            <button id="causes_racines_button_active", class="tab" >Causes Racines</button>
+            <button id="bilan_button_disabled" , class="tab">Bilan</button>
+        </div>
+        <p>Cette section est réservée au bilan. Ajoutez ici les informations nécessaires.</p>
+    </div>
+
+
+    <!-- Script pour la navigation -->
+    <script>
+        document.getElementById("bilan_button_active").onclick = function () { myFunction() };
+
+        /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+        function myFunction() {
+            document.getElementById("causes").style.display = "none";
+            document.getElementById("bilan").style.display = "block";
+            document.getElementById("bilan_button_disabled").style.backgroundColor = "#b6ffb6";
+            document.getElementById("bilan_button_disabled").style.color = "black";
+            document.getElementById("causes_racines_button_active").style.backgroundColor = "#66c966";
+            document.getElementById("causes_racines_button_active").style.color = "white";
+            
+        }
+
+        document.getElementById("causes_racines_button_active").onclick = function () { myFunction2() };
+
+        /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+        function myFunction2() {
+            document.getElementById("bilan").style.display = "none";
+            document.getElementById("causes").style.display = "block";
+            document.getElementById("causes_racines_button_disabled").style.backgroundColor = "#b6ffb6";
+            document.getElementById("causes_racines_button_disabled").style.color = "black";
+            document.getElementById("bilan_button_active").style.backgroundColor = "#66c966";
+            document.getElementById("bilan_button_active").style.color = "white";
+            
+        }
+
+
+    </script>
+</body>
+</html>
