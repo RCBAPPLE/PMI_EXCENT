@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Définition des propriétés de la page, ne pas toucher si simple mise à jour -->
+        <meta charset="utf-8">
+        <title>Questionnaire d'aide au diagnostic - Template</title>
+        <link href="question_style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+    </head>
+
+    <body>
+        <header>
+            <!-- Liens vers les différentes parties du questionnaire, apparait en haut de la page.
+             Copier-coller entre des guillements les liens hhtps vers ces différentes parties, après href= -->
+            <nav>
+                <a href="" class="lien-logig">Safety</a>
+                <div class="triangle"></div>
+                <a href="" class="lien-logig">Observation and examination</a>
+                <div class="triangle"></div>
+                <a href="" class="lien-logig">Diagnostic</a>
+                <div class="triangle"></div>
+                <a href="" class="lien-logig">Resolution</a>
+                <a href="https://www.excent.fr/" class="lien-site">
+                    <img src="images/logo_eXcent.jpg" alt="Logo eXcent" class="logo-accueil">
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- La ligne ci-après lie la partie html à la partie java du code -->
+            <script src="question_java.js"></script>  
+            
+            <!-- Création des popup -->
+
+            <!-- L'overlay permet de griser le reste de l'écran quand le popup apparait. Il est désactivé par défaut. -->
+            <div class="overlay" id="overlay"></div>
+            <!-- Définition du popup permettant d'accéder au logigramme actif -->
+            <div class="popup-logig" id="popup-logig">
+                <img src="images/logigrammes/testlog.png" alt="Logigramme actif">
+                <button onclick="closePopup_logig()">Close</button>
+                <!-- Le texte en blanc dans le bouton est le texte qui s'affiche sur le bouton de fermeture -->
+            </div>
+            <!-- Définition du popup permettant de laisser un commentaire sur la question en cours -->
+            <div class="popup-comm" id="popup-comm">
+                <form action="" method="post">
+                    <fieldset>
+                        <div class="input_comm">
+                            <label for="Commentaire"><h2>Comment:</h2></label> <!-- Le texte blanc représente le texte 
+                            présent au début de la case -->
+                            <textarea name="Commentaire" rows="5" cols="33" required placeholder="Veuillez écrire ici"></textarea> <!-- Le texte 
+                            après "placeholder" est ce qui sera écris dans le fond de la case à remplir  -->
+                        </div>
+                    </fieldset>
+                     <div class="bouton-form">
+                        <input type="submit" value="Soumettre le commentaire" /> 
+                        <!-- Le texte après "value" est le texte présent dans le bouton pour démarrer le test -->
+                        <!-- Fin de la case pour démarrer le test -->
+                        <button onclick="closePopup_comm()">Close</button>
+                     </div>
+                    
+                </form>   
+            </div>
+            <!-- Définition du popup permettant de visualiser les images associées à la question -->
+            <div class="popup-img" id="popup-img">
+                <!-- Toutes les images nécessaires doivent être listées ici sous le format suivant : -->
+                <img src="images/jx.jpg" alt="Illustration de la question">
+                <button onclick="closePopup_img()">Close</button>
+            </div>
+            <!-- Définition du popup permettant de visualiser les informations complémentaires sur la question -->
+            <div class="popup-info" id="popup-info">
+                <h2>Additional informations</h2>
+                <!-- Ecrire entre les balises <p> le texte de sinfo complémentaires -->
+                <p>Here are the additional informations for this question</p>
+                <button onclick="closePopup_info()">Close</button>
+            </div>
+            
+            <!-- Définition des éléments principaux de la page -->
+            <div class="main-grid">
+                <!-- Bouton d'accès au logigramme actif -->
+                <div class="acces-logig">
+                    <a onclick="openPopup_logig()">Accss to the logigram</a>
+                </div>
+                <!-- Bouton d'accès au popup permettant de laisser un comentaire -->
+                <div class="comm"><a onclick="openPopup_comm()">Comment :</a></div>
+                <!-- Bouton d'accès à l'illustration de la question -->
+                <div class="image-question">
+                    <a onclick="openPopup_img()">
+                        <!-- Ne mettre qu'une seule image ci-après, elle servira alors de miniature cliquable -->
+                        <img src="images/jx.jpg" alt="Image associée à la question" class="img-q">
+                    </a>
+                </div>
+                
+                <!-- Définition de la zone de la question -->
+                <div class="question-grid">
+                    <!-- Mettre dans le texte blanc sur la ligne d'après le nom du logigramme actif -->
+                    <div class="logi-actif">Safety</div>
+                    <!-- Définition des pictogrammes de danger -->
+                    <div class="pictogramme">
+                        <!-- Changer la ligne en blanc ci-après change le texte devant les pictogrammes -->
+                        Beware !
+                        <!-- Lister ci-après les pictogrammes associés à la question. Spécifier entre guillemets après title le danger spécifié -->
+                        <img src="images/picto_danger.png" alt="Pictogramme de danger" title="Danger" class="img-pict">
+                        <img src="images/picto_explosion.png" alt="Pictogramme explosif" title="Danger d'explosion" class="img-pict">
+                    </div>
+                    <!-- Ecrire dans le texte en blanc la question -->
+                    <div class="question">Question</div>
+                    <!-- Définition des boutons oui et non -->
+                    <div class="oui">
+                        <a href="">YES</a>
+                    </div>
+                    <div class="non">
+                        <a href="">NO</a>
+                    </div>
+                    <!-- Définition du bouton de retour en arrière -->
+                    <div class="fleche-retour">
+                        <a href="">
+                            <span class="material-icons">keyboard_return</span>
+                            Go back
+                        </a>
+                    </div>
+                    <!-- Définition du bouton d'informations complémentaires -->
+                    <div class="info">
+                        <a onclick="openPopup_info()">
+                            <span class="material-icons">info</span>
+                            Informations
+                        </a>
+                    </div>
+
+                
+                </div>
+                
+            </div>
+        </main>
+
+        <footer>
+        </footer>
+    </body>
+
+</html>
