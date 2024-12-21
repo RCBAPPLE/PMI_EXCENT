@@ -1,3 +1,5 @@
+/* Ce fichier regroupe les lignes de code qui définissent l'aspect de la page de question. */
+/* La partie ci-après est commne à toutes les pages du site */
 * {
     margin: 0;
 }
@@ -5,22 +7,19 @@
 body{
     background-color: white;
     font-family: "Gill Sans MT", sans-serif;
-    font-size: 2em;
-    
+    font-size: 2em;   
 }
 
 h1 { 
     font-family: "Gill Sans MT", sans-serif; 
     font-size: 24px; font-style: normal; font-variant: normal; 
     font-weight: 700; line-height: 26.4px; 
-
 }
  
 h2 { 
     font-family: "Gill Sans MT", sans-serif; 
     font-size: 14px; font-style: normal; font-variant: normal; 
     font-weight: 700; line-height: 15.4px; 
-
 } 
 
 p {
@@ -35,23 +34,36 @@ a {
 }
 a:hover {
     opacity : 0.8;
-
+    cursor: pointer;
 }
 
-.lien-logig{
+
+/* La partie ci-après définit l'aspect de la partie supérieure de la page */
+nav {
+    
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(231,230,230);
+}
+
+.lien-logig {
+    /* Cases contenant les liens vers les différentes étapes */
     background-color: rgb(124,187,103);
     border-radius : 10px ;
     padding : 20px 30px ;
     box-shadow: 0px 0px 10px -5px black;
     border: 1px solid black ;
-}
+} 
 
-.triangle{
+.triangle {
+    /* Définition des triangles entre les cases*/
     position:relative;
     padding: -15px;
     width: 0px;
 }
 .triangle::after {
+    /* Espacement entre les triangles */
     content: '';
     position: absolute;
     top: 50%;
@@ -63,47 +75,29 @@ a:hover {
 }
 
 .lien-logig:hover {
-    box-shadow: 0px 0px 10px 3px black;
+    box-shadow: 0px 0px 10px 3px black; /* Assombrissement des liens vers les différentes parties du test */
 }
 
 .logo-accueil {
+    /* Logo eXcent */
     width: 200px;
     height : 125px;
     box-shadow: 0px 0px 10px -5px black; 
 }
 .lien-site {
+    /* Lien vers le site eXcent dans le logo */
     background-color: none;
     margin: 5px;
     box-shadow: 0px 0px 10px -5px black; 
 }
-nav {
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgb(231,230,230);
-}
 
 
-.acces-logig {
-    position: relative;
-    box-shadow: 0px 0px 10px -5px black;
-    border: 1px solid black ;
-}
-.acces-logig:hover {
-    box-shadow: 0px 0px 10px 3px black;
-}
-
-
-.miniature-logig {
-    width: 400px;
-    height : 600px;
-}
-
-
+/* Cette partie définit les éléments à gauche de la page ainsi que la forme du bloc question */
 .main-grid {
+    /* Grille de répartition de la page */
     display :grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-columns: 20% 80%; /* La colonne de gauche prend 20% de la page, la colonne de droite 80% */
+    grid-template-rows: 1fr 1fr 3fr; /* La grille est divisée en 3 lignes. La 3e est 3 fois plus grande que les deux premières */
     margin-left: 50px;
     margin-right: 50px;
     margin-top : 5px;
@@ -113,20 +107,27 @@ nav {
 }
 
 .acces-logig {
-    grid-row : 1/2;
-    grid-column : 1/2;
+    /* Bloc cliquable permettant d'accéder au logigramme actif */
+    position: relative;
+    box-shadow: 0px 0px 10px -5px black;
+    border: 1px solid black ;
+    grid-row : 1/2; /* Positionné sur la première ligne */
+    grid-column : 1/2; /* Positionné sur la première colonne */
     background-color: rgb(140,209,240);
     border-radius : 10px ;
     display:flex;
     justify-content: space-around;
     align-items: center;
     margin: 7px;
-    
+}
+.acces-logig:hover {
+    box-shadow: 0px 0px 10px 3px black; /* Ombre lors du survol par le curseur */
 }
 
 .comm {
-    grid-row : 2/3;
-    grid-column : 1/2;
+    /* Bloc cliquable pour laisser un commentaire */
+    grid-row : 2/3; /* Positionné sur la deuxième ligne */
+    grid-column : 1/2; /* Positionné sur la première colonne */
     background-color: rgb(140,209,240);
     border-radius : 10px ;
     display:flex;
@@ -137,12 +138,13 @@ nav {
     box-shadow: 0px 0px 10px -5px black; 
 }
 .comm:hover {
-    box-shadow: 0px 0px 10px 3px black;
+    box-shadow: 0px 0px 10px 3px black; /* Ombre lors du survol par le curseur */
 }
 
 .image-question {
-    grid-row : 3/4;
-    grid-column: 1/2;
+    /* Illustration de la question présente en bas à gauche */
+    grid-row : 3/4; /* Positionné sur la troisième ligne */
+    grid-column: 1/2; /* Positionné sur la première colonne */
     border-radius : 10px ;
     display:flex;
     justify-content: space-around;
@@ -151,18 +153,21 @@ nav {
     box-shadow: 0px 0px 10px -5px black; 
 }
 .image-question:hover {
-    box-shadow: 0px 0px 10px 3px black;
+    box-shadow: 0px 0px 10px 3px black; /* Ombre lors du survol par le curseur */
 }
 
 .img-q{
+    /* Définition de la forme de l'image en elle-même */
     max-width: 100%;
     max-height: 100%;
     box-sizing: border-box;
 }
 
+/* La partie suivante définit l'aspect des éléments présents dans le bloc question */
 .question-grid {
-    grid-row : 1/4;
-    grid-column : 2/3;
+    /* Définition de la grille permettant d'organiser tous les éléments */
+    grid-row : 1/4; /* Positionné sur toutes les lignes de la grille principale*/
+    grid-column : 2/3; /* Positionné sur la dernière colonne de la grille principale*/
     background-color: rgb(135,136,136);
     border-radius : 10px ;
     padding : 20px 30px ;
@@ -172,8 +177,9 @@ nav {
 }
 
 .logi-actif {
-    grid-row : 1/2;
-    grid-column: 1/3;
+    /* Bloc contenant le nom du logigramme actif */
+    grid-row : 1/2; /* Positionné sur la première ligne de la grille*/
+    grid-column: 1/3; /* Positionné sur la première et la deuxième colonne de la grille*/
     background-color: rgb(249,182,43);
     border-radius : 10px ;
     display:flex;
@@ -186,8 +192,9 @@ nav {
 }
 
 .pictogramme {
-    grid-row : 1/2;
-    grid-column: 4/7;
+    /* Bloc contenant les pictgrammes */
+    grid-row : 1/2; /* Positionné sur la première ligne de la grille*/
+    grid-column: 4/7; /* Positionné de la 4e à la dernière colonne de la grille*/
     border-radius : 10px ;
     display:flex;
     justify-content: space-around;
@@ -199,13 +206,15 @@ nav {
     border: 1px solid black ;
 }
 .img-pict{
+    /* Définition de la forme des images des pictogrammes */
     padding: 10px;
     height:75%;
 }
 
 .question{
-    grid-row : 2/3;
-    grid-column: 1/7;
+    /* Définition de l'encart blanc contenant le texte de la question */
+    grid-row : 2/3; /* Positionné sur la deuxième ligne de la grille*/
+    grid-column: 1/7; /* Positionné sur toutes les colonnes de la grille*/
     background-color: white;
     border-radius : 10px ;
     display:flex;
@@ -216,8 +225,9 @@ nav {
 }
 
 .oui{
-    grid-row : 3/4;
-    grid-column: 3/4;
+    /* Définition du bloc oui */
+    grid-row : 3/4; /* Positionné sur la troisième ligne de la grille*/
+    grid-column: 3/4; /* Positionné sur la troisième colonne de la grille*/
     background-color: rgb(124,187,103);
     border-radius : 10px ;
     display:flex;
@@ -234,8 +244,9 @@ nav {
 }
 
 .non{
-    grid-row : 3/4;
-    grid-column: 4/5;
+    /* Bloc non */
+    grid-row : 3/4; /* Positionné sur la troisième ligne de la grille*/
+    grid-column: 4/5; /* Positionné sur la quatrième ligne de la grille*/
     background-color: red;
     border-radius : 10px ;
     display:flex;
@@ -252,8 +263,9 @@ nav {
 }
 
 .fleche-retour{
-    grid-row : 4/5;
-    grid-column: 1/3; 
+    /* Bloc de retour en arrière */
+    grid-row : 4/5; /* Positionné sur la 4e ligne de la grille*/
+    grid-column: 1/3;  /* Positionné sur les 2 premières lignes de la grille*/
     background-color: rgb(140,209,240);
     border-radius : 10px ;
     display:flex;
@@ -269,8 +281,8 @@ nav {
 }
 
 .info{
-    grid-row : 4/5;
-    grid-column: 5/7;
+    grid-row : 4/5; /* Positionné sur la 4e ligne de la grille*/
+    grid-column: 5/7; /* Positionné sur les deux dernières colonnes de la grille*/
     background-color: rgb(140,209,240);
     border-radius : 10px ;
     display:flex;
@@ -286,9 +298,9 @@ nav {
     box-shadow: 0px 0px 10px 3px black;
 }
 
-/* Eléments des popups */
-
+/* La partie suivante définit les éléments des popups */
 .overlay {
+    /* Fond grisé lorsque le popup apparait */
     display: none; /* Masqué par défaut */
     position: fixed;
     top: 0;
@@ -300,6 +312,7 @@ nav {
 }
 
 .popup-logig {
+    /* Popup affichant le logigramme dans lequel la question se trouve (actif) */
     visibility: hidden ; /* Masqué par défaut */
     display: flex;
     flex-direction: row;
@@ -316,16 +329,19 @@ nav {
 }
 
 .popup-logig img {
+    /* Image du logigramme */
     object-fit: contain;
     margin: 15px;
 }
 
 .popup-logig button {
+    /* Bouton de fermeture */
     margin: 5px;
     height : 20px;
 }
 
 .popup-img {
+    /* Popup affichant les images d'illustration de la question */
     visibility: hidden ; /* Masqué par défaut */
     display: flex;
     flex-direction: row;
@@ -343,6 +359,7 @@ nav {
 }
 
 .popup-img img {
+    /* Images */
     object-fit: contain;
     margin: 15px;
     max-width: 75%;
@@ -350,11 +367,13 @@ nav {
 }
 
 .popup-img button {
+    /* Bouton de fermeture */
     margin: 5px;
     height : 20px;
 }
 
-.popup-comm {
+.popup-info {
+    /* Popup contenant les informations complémentaires */
     visibility: hidden ; /* Masqué par défaut */
     display: flex;
     flex-direction: column;
@@ -370,7 +389,8 @@ nav {
     max-height: 100%;
 }
 
-.popup-info {
+.popup-comm {
+    /* Popup dans lequel on peut laisser un commentaire*/
     visibility: hidden ; /* Masqué par défaut */
     display: flex;
     flex-direction: column;
@@ -384,4 +404,60 @@ nav {
     padding: 20px;
     z-index: 1000;
     max-height: 100%;
+    width: 75%;
+}
+
+form {
+    /* Formulaire pour envoyer le commentaire */
+    width: 100%;
+    max-width: 80%;  
+    margin: 0 auto;    
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+fieldset {
+    /* ENcart remplissable */
+    border: none;  
+    padding: 0;
+    font-family :'Raleway' ; /*Police d'écriture des cases du formulaire*/
+}
+
+label {
+    /* Nom de l'encart, affiché à côté */
+    font-size: 0.8em;  
+    margin-right: 10px; 
+    width: 20%;         
+}
+
+.input_comm{ /*Caractéristiques de la case du formulaire*/
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 3px;
+    width: 100%;
+    padding: 1%;
+    background-color: none; /*Couleur de la case*/
+    opacity: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="textarea"] {
+    /* Caractéristiques du texte affiché lors du remplissage */
+    flex-grow: 1;      
+    padding: 5px;
+    border: 1px solid rgb(118, 118, 118); 
+    border-radius: 5px;
+    font-size: 0.5em;            
+    width: 90%;          
+    height : 150%;     
+    font-family :'Raleway' ; /*Police d'écriture dans la partie blanche de chaque case du formulaire*/
+}
+
+.bouton-form{
+    /* Bouton de fermeture */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
